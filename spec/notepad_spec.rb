@@ -18,4 +18,10 @@ describe Notepad do
 #     expect(@notepad.get_user_input).to eq [{'TestTitle' => 'TestBody'}]
 #     expect(@notepad.all_notes).to eq [{'TestTitle' => 'TestBody'}]
 #   end
+
+  it 'should return a list of stored titles' do
+    @notepad.add_to_list("Title","Body")
+    @notepad.add_to_list("Title2","Body2")
+    expect(@notepad.list_titles).to eq ("Title, Title2")
+  end
 end

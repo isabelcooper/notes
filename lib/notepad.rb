@@ -18,5 +18,7 @@ class Notepad
     add_to_list(title, body)
   end
 
-
+  def list_titles
+    @all_notes.map { |note| note.keys }.join(", ")
+  end
 end
