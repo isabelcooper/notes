@@ -1,24 +1,23 @@
 class Notepad
-
   attr_reader :all_notes
 
   def initialize
     @all_notes = []
   end
 
-  def add_to_list(title, body)
-    @all_notes << {title => body}
+  def add_to_list(note)
+    @all_notes << note
   end
 
-  def get_user_input
-    puts "Enter title"
+  def user_input
+    puts 'Enter title'
     title = gets.chomp
-    puts "Enter body"
+    puts 'Enter body'
     body = gets.chomp
     add_to_list(title, body)
   end
 
   def list_titles
-    @all_notes.map { |note| note.keys }.join(", ")
+    @all_notes.map { |note| note.read_note.keys }.join(', ')
   end
 end
