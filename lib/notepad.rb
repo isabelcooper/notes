@@ -14,10 +14,10 @@ class Notepad
     title = gets.chomp
     puts 'Enter body'
     body = gets.chomp
-    add_to_list(title, body)
+    add_to_list({title => body})
   end
 
   def list_titles
-    @all_notes.map { |note| note.read_note.keys }.join(', ')
+    @all_notes.map { |note| "#{note.title}" }.join(', ')
   end
 end

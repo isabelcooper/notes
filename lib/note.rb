@@ -1,10 +1,7 @@
 class Note
+  attr_reader :title, :body
   def initialize(title, body)
     @title = title
     @body = body
-  end
-
-  def read_note
-    { @title => @body }
   end
 end
